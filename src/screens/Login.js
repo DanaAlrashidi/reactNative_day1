@@ -1,7 +1,7 @@
 import { View, Text, TextInput, Button, Pressable } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import ROUTES from "../context/navigation";
+import ROUTES from "../context/navigation/profile";
 
 const Login = () => {
   const navigation = useNavigation();

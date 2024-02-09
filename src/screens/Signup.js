@@ -1,7 +1,7 @@
 import { View, Text, TextInput, Button, Pressable } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import ROUTES from "../context/navigation";
+import ROUTES from "../context/navigation/profile";
 
 const Signup = () => {
   const navigation = useNavigation();
@@ -23,9 +23,7 @@ const Signup = () => {
           onPress={() => {
             navigation.navigate(ROUTES.AUTH_NAVIGATION.LOGIN);
           }}
-        >
-          <Text>Dont have an account? Signup</Text>
-        </Pressable>
+        ></Pressable>
       </View>
     </View>
   );
