@@ -4,5 +4,8 @@ const getAllItems = async () => {
   const res = await instance.get("/mini-project/api/items");
   return res.data;
 };
-
-export { getAllItems };
+const getItemByID = async (_id) => {
+  const res = await instance.get(`/mini-project/api/items/${_id}`);
+  return res.data;
+};
+export { getAllItems, getItemByID };
