@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import AuthNavigation from "./src/Navigation/AuthNavigation";
+import AuthNavigation from "./src/Navigation/Profile/AuthNavigation";
 import { useState } from "react";
 import MyButton from "./src/components/MyButton";
 import CardItem from "./src/components/CardItem";
