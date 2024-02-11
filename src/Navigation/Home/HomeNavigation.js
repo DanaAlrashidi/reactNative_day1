@@ -10,7 +10,11 @@ const Stack = createStackNavigator();
 const HomeNavigation = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name={ROUTES.HOME_NAVIGATION.HOME} component={Home} />
+      <Stack.Screen
+        options={{ title: "Dana" }}
+        name={ROUTES.HOME_NAVIGATION.HOME}
+        component={Home}
+      />
       <Stack.Screen
         name={ROUTES.HOME_NAVIGATION.CARD_DETAIL}
         component={CardDetail}
