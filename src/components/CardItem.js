@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
-
-const CardItem = () => {
+import { BASE_URL } from "../api/index";
+const CardItem = (image, name) => {
   return (
     <View
       style={{
@@ -16,7 +16,7 @@ const CardItem = () => {
         <Image
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
           source={{
-            uri: "https://reactnative.dev/img/tiny_logo.png",
+            uri: `${BASE_URL}/${image}`,
           }}
         />
       </View>
@@ -30,7 +30,7 @@ const CardItem = () => {
           alignItems: "center",
         }}
       >
-        <Text style={{ fontSize: "20", fontWeight: "bold" }}>item name</Text>
+        <Text style={{ fontSize: "20", fontWeight: "bold" }}> {name}</Text>
       </View>
     </View>
   );

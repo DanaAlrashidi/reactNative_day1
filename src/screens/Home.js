@@ -1,37 +1,71 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import MyButton from "../components/MyButton";
+// import MyButton from "../components/MyButton";
 import CardItem from "../components/CardItem";
+import { useQuery } from "@tanstack/react-query";
+import { getAllItems } from "../api/items";
 
 const Home = () => {
+  const { data } = useQuery({
+    queryKey: ["items"],
+    queryFn: () => getAllItems(),
+  });
+
+  //   const items = data?.map((item) => {
+  //     return <CardItem image={item.image} name={item.name} />;
+  //   });
+
   return (
     <View
       style={{
         backgroundColor: "red",
-        flex: 80,
-        justifyContent: "center",
-        alignItems: "center",
+        flex: 1,
+        // justifyContent: "center",
+        // alignItems: "center",
       }}
     >
-      <Text>hi Ali</Text>
-      {/* <View
-          style={{
-            backgroundColor: "blue",
-            flex: 0.3,
+      <View
+        style={{
+          backgroundColor: "blue",
+          flex: 20,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <ScrollView
+          horizontal
+          contentContainerStyle={{
             justifyContent: "center",
             alignItems: "center",
+            flex: 1,
+            gap: 10,
           }}
         >
-          <Button
-            title="Click me"
-            onPress={() => {
-              setCounter(counter + 1);
-            }}
-            color={"white"}
-          />
-          <Text style={{ fontSize: 30 }}>{counter}</Text>
-        </View> */}
-
+          <View
+            style={{ width: 50, height: 30, backgroundColor: "white" }}
+          ></View>
+          <View
+            style={{ width: 50, height: 30, backgroundColor: "white" }}
+          ></View>
+          <View
+            style={{ width: 50, height: 30, backgroundColor: "white" }}
+          ></View>
+          <View
+            style={{ width: 50, height: 30, backgroundColor: "white" }}
+          ></View>
+          <View
+            style={{ width: 50, height: 30, backgroundColor: "white" }}
+          ></View>
+        </ScrollView>
+      </View>
+      <View
+        style={{
+          backgroundColor: "green",
+          flex: 80,
+          //   justifyContent: "center",
+          //   alignItems: "center",
+        }}
+      ></View>
       <ScrollView
         contentContainerStyle={{
           justifyContent: "center",
@@ -39,15 +73,8 @@ const Home = () => {
           gap: 20,
         }}
       >
-        <MyButton />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
+        {/* {items} */}
       </ScrollView>
-
-      {/* <AuthNavigation /> */}
     </View>
   );
 };
