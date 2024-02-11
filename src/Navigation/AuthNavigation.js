@@ -2,8 +2,8 @@ import { View, Text } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import ROUTES from ".";
-import Signup from "../../../screens/Signup";
-import Login from "../../../screens/Login";
+import Signup from "../screens/profile/Signup";
+import Login from "../screens/profile/Login";
 
 const Stack = createStackNavigator();
 const AuthNavigation = () => {

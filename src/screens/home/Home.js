@@ -1,9 +1,9 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 // import MyButton from "../components/MyButton";
-import CardItem from "../components/CardItem";
+import CardItem from "../../components/CardItem";
 import { useQuery } from "@tanstack/react-query";
-import { getAllItems } from "../api/items";
+import { getAllItems } from "../../api/items";
 
 const Home = () => {
   const { data } = useQuery({
