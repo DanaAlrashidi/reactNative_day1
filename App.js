@@ -7,13 +7,14 @@ import { useState } from "react";
 import MyButton from "./src/components/MyButton";
 import CardItem from "./src/components/CardItem";
 import Home from "./src/screens/Home";
+import Login from "./src/screens/Login";
 
 export default function App() {
   const [counter, setCounter] = useState(0);
   return (
     <QueryClientProvider client={new QueryClient()}>
       <NavigationContainer>
-        <Home />
+        <AuthNavigation />
       </NavigationContainer>
     </QueryClientProvider>
   );

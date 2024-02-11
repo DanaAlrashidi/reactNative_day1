@@ -11,9 +11,9 @@ const Home = () => {
     queryFn: () => getAllItems(),
   });
 
-  //   const items = data?.map((item) => {
-  //     return <CardItem image={item.image} name={item.name} />;
-  //   });
+  const items = data?.map((item) => {
+    return <CardItem image={item.image} name={item.name} />;
+  });
 
   return (
     <View
@@ -73,7 +73,7 @@ const Home = () => {
           gap: 20,
         }}
       >
-        {/* {items} */}
+        {items}
       </ScrollView>
     </View>
   );

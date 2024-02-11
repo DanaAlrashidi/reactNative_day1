@@ -13,6 +13,8 @@ const Signup = () => {
         alignItems: "center",
       }}
     >
+      <Text>Full name</Text>
+      <TextInput placeholder="please enter your Full name:" />
       <Text>Username</Text>
       <TextInput placeholder="please enter your username:" />
       <Text>Password</Text>
