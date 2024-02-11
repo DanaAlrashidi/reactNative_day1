@@ -4,16 +4,30 @@ import React from "react";
 import CardItem from "../../components/CardItem";
 import { useQuery } from "@tanstack/react-query";
 import { getAllItems } from "../../api/items";
+import { useNavigation } from "@react-navigation/native";
+import ROUTES from "../../Navigation";
 
 const Home = () => {
   const { data } = useQuery({
     queryKey: ["items"],
     queryFn: () => getAllItems(),
   });
+  const navigation = useNavigation();
 
-  // const items = data?.map((item) => {
-  //   return <CardItem image={item.image} name={item.name} />;
-  // });
+  const items = data?.map((item) => {
+    return (
+      <CardItem
+        image={item.image}
+        name={item.name}
+        onPress={() => {
+          navigation.navigate(ROUTES.HOME_NAVIGATION.CARD_DETAIL, {
+            _id: item._id,
+            name: item.name,
+          });
+        }}
+      />
+    );
+  });
 
   return (
     <View
@@ -73,7 +87,7 @@ const Home = () => {
           gap: 20,
         }}
       >
-        {/* {items} */}
+        {items}
       </ScrollView>
     </View>
   );
