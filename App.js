@@ -10,14 +10,19 @@ import Home from "./src/screens/home/Home";
 import Login from "./src/screens/profile/Login";
 import HomeNavigation from "./src/Navigation/Home/HomeNavigation";
 import MainNavigation from "./src/Navigation/MainNavigation";
+import UserContext from "./src/context/UserContext";
 
 export default function App() {
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
+  const [user, setUser] = useState(true);
   return (
     <QueryClientProvider client={new QueryClient()}>
-      <NavigationContainer>
-        <MainNavigation />
-      </NavigationContainer>
+      <UserContext.Provider value={[user, setUser]}>
+        <NavigationContainer>
+          {/* {user ? <MainNavigation /> : <AuthNavigation />} */}
+          {user ? <MainNavigation /> : <AuthNavigation />}
+        </NavigationContainer>
+      </UserContext.Provider>
     </QueryClientProvider>
   );
 }
