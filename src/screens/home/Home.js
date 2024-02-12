@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 // import MyButton from "../components/MyButton";
 import CardItem from "../../components/CardItem";
@@ -38,12 +38,18 @@ const Home = () => {
         // alignItems: "center",
       }}
     >
+      <Button
+        title="Go signup"
+        onPress={() => {
+          navigation.navigate(ROUTES.AUTH_NAVIGATION.INDEX, {
+            screen: ROUTES.AUTH_NAVIGATION.SIGNUP,
+          });
+        }}
+      />
       <View
         style={{
           backgroundColor: "blue",
           flex: 20,
-          justifyContent: "center",
-          alignItems: "center",
         }}
       >
         <ScrollView

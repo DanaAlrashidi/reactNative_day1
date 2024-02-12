@@ -8,13 +8,13 @@ const CardDetail = () => {
   const rout = useRoute();
   const { _id, name } = rout.params;
   const { data } = useQuery({
-    queryKey: ["items_"],
+    queryKey: ["items", _id],
     queryFn: () => getItemByID(_id),
   });
   return (
     <View>
-      <Text>{_id}</Text>
-      <Text>{name}</Text>
+      <Text>{data?.category.name}</Text>
+      <Text>{data?.name}</Text>
     </View>
   );
 };
