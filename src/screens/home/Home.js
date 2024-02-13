@@ -46,6 +46,16 @@ const Home = () => {
           });
         }}
       />
+
+      <Button
+        title="Go to test"
+        onPress={() => {
+          navigation.navigate(ROUTES.HOME_NAVIGATION.TEST, {
+            screen: ROUTES.AUTH_NAVIGATION.SIGNUP,
+          });
+        }}
+      />
+
       <View
         style={{
           backgroundColor: "blue",

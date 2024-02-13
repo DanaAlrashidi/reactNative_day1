@@ -8,6 +8,7 @@ const ROUTES = {
     INDEX: "Home navigation",
     HOME: "home",
     CARD_DETAIL: "Card detail",
+    TEST: "Test screen",
   },
   PROFILE_NAVIGATION: {
     INDEX: "Profile navigation",

@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../../screens/home/Home";
 import CardDetail from "../../screens/home/CardDetail";
 import ROUTES from "..";
+import Test from "../../screens/home/Test";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,8 @@ const HomeNavigation = () => {
         name={ROUTES.HOME_NAVIGATION.CARD_DETAIL}
         component={CardDetail}
       />
+
+      <Stack.Screen name={ROUTES.HOME_NAVIGATION.TEST} component={Test} />
     </Stack.Navigator>
   );
 };
