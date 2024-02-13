@@ -1,17 +1,24 @@
 import { View, Text, TextInput, Button, Pressable } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import ROUTES from "../../Navigation";
 import { useMutation } from "@tanstack/react-query";
 import { login } from "../../api/auth";
+import UserContext from "../../context/UserContext";
 // import { text } from "express";
 
 const Login = () => {
   const navigation = useNavigation();
   const [userInfo, setUserInfo] = useState({});
-  const { mutate } = useMutation({
+
+  const [user, setUser] = useContext(UserContext);
+  const { mutate, error } = useMutation({
     mutationKey: ["login"],
     mutationFn: () => login(userInfo),
+
+    onSuccess: () => {
+      setUser(true);
+    },
   });
   return (
     <View
@@ -35,6 +42,7 @@ const Login = () => {
           setUserInfo({ ...userInfo, password: text });
         }}
       />
+      {error && <Text>{JSON.stringify(error.response.data)}</Text>}
       <Button title="Login" onPress={mutate} />
       <View>
         <Pressable

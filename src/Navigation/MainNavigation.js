@@ -6,6 +6,7 @@ import Login from "../screens/profile/Login";
 import HomeNavigation from "./Home/HomeNavigation";
 import AuthNavigation from "./Profile/AuthNavigation";
 import ROUTES from ".";
+import Profile from "../screens/profile/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -16,10 +17,7 @@ const MainNavigation = () => {
         name={ROUTES.HOME_NAVIGATION.INDEX}
         component={HomeNavigation}
       />
-      <Tab.Screen
-        name={ROUTES.AUTH_NAVIGATION.INDEX}
-        component={AuthNavigation}
-      />
+      <Tab.Screen name={ROUTES.PROFILE_NAVIGATION.INDEX} component={Profile} />
     </Tab.Navigator>
   );
 };

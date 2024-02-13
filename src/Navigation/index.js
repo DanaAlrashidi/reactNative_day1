@@ -9,5 +9,8 @@ const ROUTES = {
     HOME: "home",
     CARD_DETAIL: "Card detail",
   },
+  PROFILE_NAVIGATION: {
+    INDEX: "Profile navigation",
+  },
 };
 export default ROUTES;
